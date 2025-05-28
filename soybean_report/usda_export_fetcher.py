@@ -1,8 +1,13 @@
 import requests
 import pandas as pd
+import os
+from dotenv import load_dotenv
 
-# 固定的 API Key 和 URL 头部
-API_KEY = ""
+# 加载 .env 文件
+load_dotenv()
+
+# 从环境变量中读取 API key
+API_KEY = os.getenv("API_KEY")
 URL_HEAD = "https://apps.fas.usda.gov/OpenData/api/esr/exports/commodityCode/801/countryCode/5700/marketYear/"
 
 def fetch_usda_data_for_year(year):

@@ -29,7 +29,17 @@ cd SoySight
 pip install -r requirements.txt
 ```
 
-### Step 3: Run the tool
+### Step 3: Set your USDA API key
+
+Create a `.env` file in the root folder (same directory as `Run-Example-Script.py`) and add your USDA API key:
+
+```
+API_KEY=your_actual_key_here
+```
+
+> 🛡️ **Note:** The `.env` file is excluded from version control via `.gitignore` to keep your key private. See `.env.example` for the format.
+
+### Step 4: Run the tool
 
 ```bash
 python Run-Example-Script.py
@@ -71,7 +81,9 @@ soybean-export-trend/
 │   ├── usda_export_fetcher.py   # API requests to USDA and data retrieval
 │   ├── plot_exports.py          # Matplotlib chart rendering logic
 ├── Run-Example-Script.py        # Main script to run the program
+├── .env.example                 # Sample environment variable file (not tracked)
 ├── requirements.txt             # All necessary dependencies
+├── .gitignore                   # Prevents sensitive files from being committed
 ```
 
 ---
@@ -84,8 +96,9 @@ soybean-export-trend/
 * `pyfiglet`
 * `rich`
 * `requests`
+* `python-dotenv`
 
-You can install them all via:
+Install them all via:
 
 ```bash
 pip install -r requirements.txt
